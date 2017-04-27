@@ -5,5 +5,7 @@ import js.annotation._
 
 object $name;format="Camel"$ extends js.JSApp {
 
-  // write awesome things!
+  def main(): Unit = {
+    // write awesome things!
+  }
 }
