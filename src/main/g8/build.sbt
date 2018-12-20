@@ -1,6 +1,7 @@
 import Deps._
 
-lazy val root = project.in(file("$name;format="norm"$"))
+lazy val root = project
+  .in(file("."))
   .enablePlugins(ScalaJSPlugin)
   .settings(
     organization := "com.example",
@@ -18,13 +19,13 @@ lazy val root = project.in(file("$name;format="norm"$"))
       "-Ywarn-numeric-widen",
       "-Ywarn-value-discard",
       "-Ywarn-unused-import",
-      "-Ywarn-unused"
+      "-Ywarn-unused",
+      "-P:scalajs:sjsDefinedByDefault"
     ),
     name := "$name;format="norm"$",
     description := "$description$",
     libraryDependencies ++= Seq(
       sjsDom,
       utest
-    ),
-    testFrameworks += new TestFramework("utest.runner.Framework")
+    )
   )
